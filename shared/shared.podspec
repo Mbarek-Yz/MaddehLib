@@ -1,14 +1,14 @@
 Pod::Spec.new do |spec|
-    spec.name                     = 'shared'
+    spec.name                     = 'MaddehLib'
     spec.version                  = '1.0'
-    spec.homepage                 = 'Link to the Shared Module homepage'
-    spec.source                   = { :http=> ''}
-    spec.authors                  = ''
-    spec.license                  = ''
+    spec.homepage                 = 'https://github.com/Mbarek-Yz/MaddehLib.git'
+    spec.source                   = { :git => 'https://github.com/Mbarek-Yz/MaddehLib.git', :tag => '1.0.0' }
+    spec.authors                  = 'Maddeh'
+    spec.license                  = 'MIT'
     spec.summary                  = 'Some description for the Shared Module'
-    spec.vendored_frameworks      = 'build/cocoapods/framework/shared.framework'
+    spec.vendored_frameworks      = 'shared/build/cocoapods/framework/shared.framework'
     spec.libraries                = 'c++'
-    spec.ios.deployment_target = '16.0'
+    spec.ios.deployment_target = '12.0'
                 
                 
     if !Dir.exist?('build/cocoapods/framework/shared.framework') || Dir.empty?('build/cocoapods/framework/shared.framework')
