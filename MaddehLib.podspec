@@ -10,6 +10,8 @@ Pod::Spec.new do |spec|
     spec.libraries                = 'c++'
     spec.ios.deployment_target = '12.0'
                 
+    spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+    spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
                 
     if !Dir.exist?('shared/build/cocoapods/framework/shared.framework') || Dir.empty?('shared/build/cocoapods/framework/shared.framework')
         raise "
