@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
     spec.ios.deployment_target = '12.0'
                 
                 
-    if !Dir.exist?('build/cocoapods/framework/shared.framework') || Dir.empty?('build/cocoapods/framework/shared.framework')
+    if !Dir.exist?('shared/build/cocoapods/framework/shared.framework') || Dir.empty?('shared/build/cocoapods/framework/shared.framework')
         raise "
 
         Kotlin framework 'shared' doesn't exist yet, so a proper Xcode project can't be generated.
