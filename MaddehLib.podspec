@@ -2,16 +2,18 @@ Pod::Spec.new do |spec|
     spec.name                     = 'MaddehLib'
     spec.version                  = '1.0'
     spec.homepage                 = 'https://github.com/Mbarek-Yz/MaddehLib.git'
-    spec.source                   = { :git => 'https://github.com/Mbarek-Yz/MaddehLib.git', :tag => '1.0.0' }
+    spec.source                   = { :git => 'https://github.com/Mbarek-Yz/MaddehLib.git', :tag => '1.0.2' }
     spec.authors                  = 'Maddeh'
     spec.license                  = 'MIT'
     spec.summary                  = 'Some description for the Shared Module'
     spec.vendored_frameworks      = 'shared/build/cocoapods/framework/shared.framework'
     spec.libraries                = 'c++'
     spec.ios.deployment_target = '12.0'
-                
-    spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-    spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+
+    spec.pod_target_xcconfig = {
+        'KOTLIN_TARGET[sdk=iphonesimulator*]' => 'ios_x64',
+        'KOTLIN_TARGET[sdk=iphoneos*]' => 'ios_arm'
+    }
                 
     if !Dir.exist?('shared/build/cocoapods/framework/shared.framework') || Dir.empty?('shared/build/cocoapods/framework/shared.framework')
         raise "
